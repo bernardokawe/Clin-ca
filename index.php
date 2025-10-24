@@ -11,9 +11,9 @@
         <thead>
           <tr>
             <th scope="col">id</th>
-            <th scope="col">race</th>
-            <th scope="col">owner's phone</th>
-            <th scope="col">observations</th>
+            <th scope="col">raça</th>
+            <th scope="col">telefone</th>
+            <th scope="col">atividades</th>
           </tr>
         </thead>
         <tbody>
