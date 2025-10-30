@@ -18,33 +18,34 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `agenda`
+-- Banco de dados: `corrida`
 --
-DROP DATABASE IF exists Cliníca;
+DROP DATABASE IF exists corrida;
 
-CREATE DATABASE Cliníca;
+CREATE DATABASE corrida;
 -- --------------------------------------------------------
-USE Cliníca;
+USE corrida;
 --
 -- Estrutura da tabela `contacts`
 --
 
-CREATE TABLE `contacts` (
+CREATE TABLE `corrida` (
   `id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
-  `phone` varchar(20) DEFAULT NULL,
-  `observations` text DEFAULT NULL
+  `equipe` varchar(20) DEFAULT NULL,
+  `pit stops feitos` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 
 --
 -- Extraindo dados da tabela `contacts`
 --
 
-INSERT INTO `contacts` (`call number`, `race`, `owner's phone`, `observations`) VALUES
-(1, 'Pastor Alemão', '(11)9999-8888', 'Protetor'),
-(2, 'Husky Siberiano', '(11)9999-4698', 'Gelo'),
-(3, 'Golden Retriever', '(11) 9945-3468', 'Celebridade'),
-(4, ' Doberman ', '(11) 9976-4567', ' Guarda');
+INSERT INTO `corrida` (`id`, `name`, `equipe`, `pit stops feitos`) VALUES
+(44, 'Lewis_Hamilton', 'Ferrari', '1'),
+(1, 'Max_Verstapen', 'Mercedes', '1'),
+(4, 'Lando_Norris', 'Mc_Laren', '0'),
+(55, ' Carlos_Sainz', 'Williams Racing', ' 1');
 
 
 --
@@ -54,7 +55,7 @@ INSERT INTO `contacts` (`call number`, `race`, `owner's phone`, `observations`) 
 --
 -- Índices para tabela `contacts`
 --
-ALTER TABLE `contacts`
+ALTER TABLE `corrida`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -64,10 +65,18 @@ ALTER TABLE `contacts`
 --
 -- AUTO_INCREMENT de tabela `contacts`
 --
-ALTER TABLE `contacts`
+ALTER TABLE `corrida`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+
+use corrida;
+select * from corrida;
+
+
+truncate table corrida;

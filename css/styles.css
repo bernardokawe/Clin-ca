@@ -15,7 +15,7 @@
 
 #contacts-table thead {
   color: #FFF;
-  background-color: #007BFF;
+  background-color: #000000;
 }
 
 .col-id {
@@ -37,7 +37,7 @@
 }
 
 .edit-icon {
-  color: #007BFF;
+  color: #5a0303;
 }
 
 .delete-form {

@@ -14,10 +14,10 @@
     if($data["type"] === "create") {
 
       $name = $data["name"];
-      $phone = $data["phone"];
-      $observations = $data["observations"];
+      $equipe = $data["phone"];
+      $pitstopsfeitos = $data["observations"];
 
-      $query = "INSERT INTO contacts (name, phone, observations) VALUES (:name, :phone, :observations)";
+      $query = "INSERT INTO corrida (name, phone, observations) VALUES (:name, :phone, :observations)";
 
       $stmt = $conn->prepare($query);
 
@@ -39,19 +39,21 @@
     } else if($data["type"] === "edit") {
 
       $name = $data["name"];
-      $phone = $data["phone"];
-      $observations = $data["observations"];
+      $equipe = $data["equipe"];
+      $pitstopsfeitos = $data["
+      
+      pit stops feitos"];
       $id = $data["id"];
 
-      $query = "UPDATE contacts 
+      $query = "UPDATE corrida
                 SET name = :name, phone = :phone, observations = :observations 
                 WHERE id = :id";
 
       $stmt = $conn->prepare($query);
 
       $stmt->bindParam(":name", $name);
-      $stmt->bindParam(":phone", $phone);
-      $stmt->bindParam(":observations", $observations);
+      $stmt->bindParam(":phone", $equipe);
+      $stmt->bindParam(":observations", $pitstopsfeitos);
       $stmt->bindParam(":id", $id);
 
       try {
@@ -69,7 +71,7 @@
 
       $id = $data["id"];
 
-      $query = "DELETE FROM contacts WHERE id = :id";
+      $query = "DELETE FROM corrida WHERE id = :id";
 
       $stmt = $conn->prepare($query);
 
@@ -103,7 +105,7 @@
     // Retorna o dado de um contato
     if(!empty($id)) {
 
-      $query = "SELECT * FROM contacts WHERE id = :id";
+      $query = "SELECT * FROM corrida WHERE id = :id";
 
       $stmt = $conn->prepare($query);
 
@@ -116,15 +118,15 @@
     } else {
 
       // Retorna todos os contatos
-      $contacts = [];
+      $corrida = [];
 
-      $query = "SELECT * FROM contacts";
+      $query = "SELECT * FROM corrida";
 
       $stmt = $conn->prepare($query);
 
       $stmt->execute();
       
-      $contacts = $stmt->fetchAll();
+      $corrida = $stmt->fetchAll();
 
     }
 

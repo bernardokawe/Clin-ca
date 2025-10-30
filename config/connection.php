@@ -1,7 +1,7 @@
 <?php
 
   $host = "localhost";
-  $dbname = "Cliníca";
+  $dbname = "corrida";
   $user = "root";
   $pass = "Senai@118";
 
