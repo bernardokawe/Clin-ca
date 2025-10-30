@@ -3,6 +3,7 @@
 ?>
   <div class="container">
     <?php if(isset($printMsg) && $printMsg != ''): ?>
+      <link rel="stylesheet" href="css/styles.css">
       <p id="msg"><?= $printMsg ?></p>
     <?php endif; ?>
     <h1 id="main-title">Corrida</h1>
